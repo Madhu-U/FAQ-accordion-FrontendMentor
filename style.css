@@ -1,3 +1,18 @@
+:root {
+    /* colors */
+    --cardbg: hsl(0, 0%, 100%);
+    --bodybg: hsl(275, 100%, 97%);
+    --answers: hsl(292, 16%, 49%);
+    --main: hsl(292, 42%, 14%);
+
+    /* typography */
+    --ff-main: "Work Sans", sans-serif;
+    --fw-regular: 400;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+    --fs-medium: 1rem;
+}
+
 *,
 *::before,
 *::after {
@@ -15,4 +30,60 @@ canvas,
 svg {
     display: block;
     max-width: 100%;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    min-height: 100svh;
+    padding: 1rem;
+    background-color: var(--bodybg);
+    background-image: url(./assets/images/background-pattern-desktop.svg);
+    background-position-y: top;
+    background-repeat: no-repeat;
+}
+
+.card {
+    background-color: var(--cardbg);
+    padding: 2.5rem 2rem;
+    border-radius: 10px;
+    font-family: var(--ff-main);
+    max-width: 600px;
+}
+
+.card__title {
+    display: flex;
+    gap: 1.5rem;
+    font-weight: var(--fw-bold);
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+.question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--main);
+    font-weight: var(--fw-semibold);
+    font-size: 1.2rem;
+}
+
+.answer {
+    color: var(--answers);
+    font-size: var(--fs-medium);
+    margin-top: 1rem;
+    line-height: 1.5;
+}
+
+
+.hidden {
+    display: none;
+}
+
+hr {
+    border: none;
+    background-color: var(--answers);
+    opacity: 50%;
+    height: 1px;
+    margin-block: 1.5rem;
 }
