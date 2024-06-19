@@ -1,18 +1,3 @@
-:root {
-    /* colors */
-    --cardbg: hsl(0, 0%, 100%);
-    --bodybg: hsl(275, 100%, 97%);
-    --answers: hsl(292, 16%, 49%);
-    --main: hsl(292, 42%, 14%);
-
-    /* typography */
-    --ff-main: "Work Sans", sans-serif;
-    --fw-regular: 400;
-    --fw-semibold: 600;
-    --fw-bold: 700;
-    --fs-medium: 1rem;
-}
-
 *,
 *::before,
 *::after {
@@ -32,6 +17,21 @@ svg {
     max-width: 100%;
 }
 
+:root {
+    /* colors */
+    --cardbg: hsl(0, 0%, 100%);
+    --bodybg: hsl(275, 100%, 97%);
+    --answers: hsl(292, 16%, 49%);
+    --main: hsl(292, 42%, 14%);
+
+    /* typography */
+    --ff-main: "Work Sans", sans-serif;
+    --fw-regular: 400;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+    --fs-medium: 1rem;
+}
+
 body {
     display: grid;
     place-items: center;
@@ -39,8 +39,8 @@ body {
     padding: 1rem;
     background-color: var(--bodybg);
     background-image: url(./assets/images/background-pattern-desktop.svg);
-    background-position-y: top;
     background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 .card {
@@ -66,6 +66,11 @@ body {
     color: var(--main);
     font-weight: var(--fw-semibold);
     font-size: 1.2rem;
+
+    :hover {
+        cursor: pointer;
+        color: purple;
+    }
 }
 
 .answer {
@@ -86,4 +91,10 @@ hr {
     opacity: 50%;
     height: 1px;
     margin-block: 1.5rem;
+}
+
+@media (max-width:400px) {
+    body {
+        background-image: url(./assets/images/background-pattern-mobile.svg);
+    }
 }
